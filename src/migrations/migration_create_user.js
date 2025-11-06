@@ -28,7 +28,7 @@ const seedUsers = async () => {
         image: 'user1.jpg',
         roleId: 'admin',
         positionId: 'manager',
-        name: 'Nguyễn Hữu Trung',
+        name: 'Nguyễn Văn T',
         age: 25,
       },
       {
