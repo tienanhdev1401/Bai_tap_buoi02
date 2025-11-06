@@ -6,9 +6,6 @@ let getHomePage = async (req, res) => {
   //return res.send('Trần Phan Tiến Anh');
   try {
     let data = await User.find({}); //lấy dữ liệu từ models/index
-    console.log('................................');
-    console.log(data);
-    console.log('................................');
     return res.render('homepage.ejs', {
       data: JSON.stringify(data), //trả dữ liệu về view
     });
@@ -30,10 +27,6 @@ let getCRUD = (req, res) => {
 //hàm findAll CRUD
 let getFindAllCrud = async (req, res) => {
   let data = await CRUDService.getAllUser();
-  // console.log('---------------------------');
-  // console.log(data);
-  // console.log('---------------------------');
-  //return res.send('FindAll crud to server');
   return res.render('users/findAllUser.ejs', {
     datalist: data,
   }); //gọi view và truyền dữ liệu ra view
@@ -54,10 +47,6 @@ let getEditCRUD = async (req, res) => {
   if (userId) {
     //check Id
     let userData = await CRUDService.getUserInfoById(userId);
-
-    // console.log('-------------------');
-    // console.log(userData);
-    // console.log('-------------------');
     return res.render('users/updateUser.ejs', {
       data: userData,
     });
